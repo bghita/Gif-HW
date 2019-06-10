@@ -3,10 +3,20 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Quote the Giphy</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/images/dj.jpg">
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Lobster|Satisfy|Shrikhand&display=swap" rel="stylesheet">
+  <title>Giphy Bands</title>
 </head>
 
-<body>
+<body class="background">
+    <div class="container">
+    <!-- header row -->
+    <div class="row">
+        <div class="col-sm-12 col-xs-12 col-md-12" id="heading">
+        <h1 class="heading">Giphy Bands</h1>
+        </div>
+    </div>
   <div id="buttons">
     <button data-person="Blink182">
       Blink-182
@@ -44,20 +54,25 @@
       <button data-person="Cardi B">
         Cardi B
       </button>
-  </div>
+</div>
+</div>
+</div>
+<br>
+<br>
   <div id="buttons-view"></div>
-  <!-- Set column HERE!! -->
-  <form id="person-form">
-    <label for="person-input">Add a Band</label>
-    <input type="text" id="person-input">
-    <br>
-    <input id="add-person" type="submit" value="Add a Band">
-    </form>
-
-  <div id="gifs-appear-here">
+  <div class="row">
+      <div class="col-sm-6 col-xs-6 col-md-6" id="inputBox">
+          <form id="person-form">
+              <label for="person-input">Add a Band</label>
+              <input type="text" id="person-input">
+              <br>
+              <input id="add-person" type="submit" value="Add a Band">
+          </form>
+      </div>
   </div>
-
   
+  <div id="gifs-appear-here">
+    </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">

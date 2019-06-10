@@ -1,0 +1,20 @@
+#inputBox{
+    float: right;
+    padding-right: 90px;
+    width:200px;
+    height:100px;
+    background-color:rgba(118, 136, 196, 0.877);
+}
+.heading{
+    font-family: 'Lobster', cursive;
+    font-size:70px;
+    text-align: center;
+    background-color: rgba(118, 139, 196, 0.548);
+}
+#buttons{
+    text-align: center;
+}
+.background{
+    background-image: url(../images/abstract.jpg);
+    background-position: fill;
+}
