@@ -5,7 +5,9 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/images/dj.jpg">
-  <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Cinzel+Decorative|Great+Vibes|Lobster|Quicksand|Satisfy|Shrikhand&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Bungee+Inline|Cinzel+Decorative|Great+Vibes|Lobster|Quicksand|Satisfy|Shrikhand&display=swap"
+    rel="stylesheet">
   <title>Giphy Bands</title>
 </head>
 
@@ -18,68 +20,63 @@
       </div>
     </div>
     <div id="buttons">
-      <div class="container">
-            <button data-person="Blink182">
-              Blink-182
-            </button>
-            <button data-person="Beyonce">
-              Beyonce
-            </button>
-            <button data-person="Rhianna">
-              Rhianna
-            </button>
-            <button data-person="Sum41">
-              Sum41
-            </button>
-            <button data-person="Drake">
-              Drake
-            </button>
-            <button data-person="Usher">
-              Usher
-            </button>
-            <button data-person="Wham">
-              Wham!
-            </button>
-            <button data-person="Tupac">
-              Tupac
-            </button>
-            <button data-person="The Weekend">
-              The Weekend
-            </button>
-            <button data-person="Mac Miller">
-              Mac Miller
-            </button>
-            <button data-person="Childish Gambino">
-              Childish Gambino
-            </button>
-            <button data-person="Cardi B">
-              Cardi B
-            </button>
-          </div>
-        </div>
-      </div>
+      <button data-person="Blink182">
+        Blink-182
+      </button>
+      <button data-person="Beyonce">
+        Beyonce
+      </button>
+      <button data-person="Rhianna">
+        Rhianna
+      </button>
+      <button data-person="Sum41">
+        Sum41
+      </button>
+      <button data-person="Drake">
+        Drake
+      </button>
+      <button data-person="Usher">
+        Usher
+      </button>
+      <button data-person="Wham">
+        Wham!
+      </button>
+      <button data-person="Tupac">
+        Tupac
+      </button>
+      <button data-person="The Weekend">
+        The Weekend
+      </button>
+      <button data-person="Mac Miller">
+        Mac Miller
+      </button>
+      <button data-person="Childish Gambino">
+        Childish Gambino
+      </button>
+      <button data-person="Cardi B">
+        Cardi B
+      </button>
     </div>
   </div>
-</div>
-<br>
-<br>
+  <br>
+  <br>
   <div id="buttons-view"></div>
   <div class="row">
-      <div class="col-sm-6 col-xs-6 col-md-6" id="inputBox">
-          <form id="person-form">
-              <label for="person-input">Whats you'r favorite Band?</label>
-              <input type="text" id="person-input">
-              <input id="add-person" type="submit" value="Add a Band">
-          </form>
-      </div>
-  </div>
-  
-  <div id="gifs-appear-here">
+    <div class="col-sm-6 col-xs-6 col-md-6" id="inputBox">
+      <form id="person-form">
+        <label for="person-input">Whats you'r favorite Band?</label>
+        <input type="text" id="person-input">
+        <input id="add-person" type="submit" value="Add a Band">
+      </form>
     </div>
+  </div>
+
+  <div id="gifs-appear-here">
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
-    $("body").on("click","button", function() {
+    $("body").on("click", "button", function () {
       var person = $(this).attr("data-person");
       var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         person + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
@@ -88,7 +85,7 @@
         url: queryURL,
         method: "GET"
       })
-        .then(function(response) {
+        .then(function (response) {
           var results = response.data;
 
           for (var i = 0; i < results.length; i++) {
@@ -108,19 +105,19 @@
           }
         });
     });
-        $("#add-person").on("click", function (event) {
-            // Prevent button page reload
-            event.preventDefault();
-            // created a button
-            var btn = $('<button>');
-            //Get the Text from User Box   
-            var userInput = $("#person-input").val();
-            //Put the text on the Button 
-            btn.text(userInput)
-            //   add the attr data-person for ajax call
-            btn.attr("data-person", userInput)
-            //   added the button to the end of the list
-            $("#buttons").append(btn);
+    $("#add-person").on("click", function (event) {
+      // Prevent button page reload
+      event.preventDefault();
+      // created a button
+      var btn = $('<button>');
+      //Get the Text from User Box   
+      var userInput = $("#person-input").val();
+      //Put the text on the Button 
+      btn.text(userInput)
+      //   add the attr data-person for ajax call
+      btn.attr("data-person", userInput)
+      //   added the button to the end of the list
+      $("#buttons").append(btn);
 
     })
   </script>
